@@ -1,0 +1,264 @@
+:root{
+  --bg: #0b1220;
+  --card: #0f1a2e;
+  --muted: #9fb0d0;
+  --text: #e9eefc;
+  --line: rgba(255,255,255,.10);
+  --primary: #3b82f6;
+  --primary2: #60a5fa;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  background:
+    var(--bg);
+
+  color: var(--text);
+}
+
+a{
+  color: var(--primary2);
+  text-decoration:none;
+}
+a:hover{ text-decoration:underline; }
+
+
+.container{
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.title{
+  margin:0;
+  font-size:28px;
+  letter-spacing:.2px;
+}
+
+/* CARD */
+.card{
+  background: rgba(15,26,46,.85);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.35);
+  margin-bottom:18px;
+}
+
+.card-header{
+  padding:12px 16px;
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+}
+
+.card-body{
+  padding:16px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  gap:10px;
+}
+
+@media (min-width:700px){
+  .grid.cols-3{
+    grid-template-columns:1fr 1fr 1fr;
+  }
+}
+
+
+label{
+  display:block;
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+
+input, select, textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  outline:none;
+}
+
+textarea{
+  min-height:160px;
+  resize:vertical;
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color:rgba(59,130,246,.7);
+  box-shadow:0 0 0 3px rgba(59,130,246,.18);
+}
+
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  cursor:pointer;
+  font-weight:600;
+}
+
+.btn:hover{
+  filter:brightness(1.05);
+  text-decoration:none;
+}
+
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  border-color:transparent;
+  color:#061022;
+}
+
+.btn-ghost{
+  background:transparent;
+}
+
+
+.news-item{
+  padding:14px 16px;
+  border-top:1px solid var(--line);
+}
+.news-item:first-child{ border-top:none; }
+
+.news-title{
+  margin:0 0 8px 0;
+  font-size:18px;
+}
+
+.news-meta{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.news-summary{
+  margin:0;
+  color:rgba(233,238,252,.92);
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+
+
+
+nav[aria-label="Pagination Navigation"]{
+  display:flex;
+  justify-content:center;
+  padding:18px;
+  border-top:1px solid var(--line);
+}
+
+nav[aria-label="Pagination Navigation"] a,
+nav[aria-label="Pagination Navigation"] span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-width:38px;
+  height:38px;
+  padding:0 12px;
+
+  margin:0 4px;
+
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.05);
+  color:var(--text);
+  font-size:14px;
+  line-height:1;
+}
+
+
+nav[aria-label="Pagination Navigation"] .active span{
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  border-color:transparent;
+  color:#061022;
+  font-weight:800;
+}
+
+
+nav[aria-label="Pagination Navigation"] .disabled span{
+  opacity:.4;
+}
+
+
+nav[aria-label="Pagination Navigation"] svg{
+  width:16px !important;
+  height:16px !important;
+  max-width:16px !important;
+  max-height:16px !important;
+  display:inline-block !important;
+}
+
+
+
+.auth-wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px 16px;
+}
+
+.auth-card{
+  width:100%;
+  max-width:420px;
+}
+
+.auth-title{
+  margin:0 0 6px 0;
+  font-size:28px;
+}
+
+.auth-sub{
+  margin:0 0 16px 0;
+  color:var(--muted);
+}
+
+.field{ margin-bottom:12px; }
+
+
+.alert{
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  margin-bottom:14px;
+  font-weight:600;
+}
+
+.alert-error{
+  background:rgba(239,68,68,.12);
+  border-color:rgba(239,68,68,.35);
+  color:#fecaca;
+}
